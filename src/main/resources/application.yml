@@ -23,17 +23,17 @@ spring:
                 allowCredentials: true
           routes:
             - id: catalog-service
-              uri: http://localhost:8081
+              uri: ${CATALOG_SERVICE_URL:http://localhost:8081}
               predicates:
                 - Path=/api/products/**
 
             - id: wishlist-service
-              uri: http://localhost:8082
+              uri: ${WISHLIST_SERVICE_URL:http://localhost:8082}
               predicates:
                 - Path=/api/wishlist/**
 
             - id: history-service
-              uri: http://localhost:8083
+              uri: ${HISTORY_SERVICE_URL:http://localhost:8083}
               predicates:
                 - Path=/api/history/**
 
